@@ -18,6 +18,8 @@ Key components:
 - **Text Features**: Processed using a pre-trained BERT model.
 - **Classification Head**: Predicts correctness using fully connected layers.
 
+![workflow](visualization/workflow.png)
+
 ## Training and Evaluation
 - **Loss Function**: Binary Cross-Entropy Loss (BCELoss).
 - **Optimizer**: AdamW with weight decay regularization.
@@ -27,6 +29,12 @@ Key components:
 Experiments were conducted with dataset sizes of 1,000, 10,000, and 100,000 data points. The model with attention trained on 10,000 data points achieved the best validation accuracy (87.07%).
 
 ## Results
+### Sample Output:
+<p align="center">
+  <img src="visualization/sample_output.png" alt="sample_output" width="40%">
+</p>
+The model predicts a binary label (0 or 1) to determine whether a given answer correctly matches the associated image and question. As shown in the figure, the question "How many hot dogs are shown?" is paired with the answer "1". The model accurately predicts the label as "1" (correct), demonstrating its ability to learn relationships between images, questions, and answers.
+
 ### Training and Validation Accuracy
 | Dataset Size   | Without Attention | With Attention |
 |----------------|-------------------|----------------|
@@ -36,8 +44,6 @@ Experiments were conducted with dataset sizes of 1,000, 10,000, and 100,000 data
 
 The attention mechanism demonstrated significant improvements in generalization and performance for moderately sized datasets.
 
-## Visualizations
-*(Insert workflow diagram, training graphs, and sample result images here)*
 
 ## Conclusion
 This project highlights the importance of attention mechanisms in VQA tasks, offering a robust solution for integrating multimodal data. Future work includes scaling the dataset and exploring more complex architectures.
